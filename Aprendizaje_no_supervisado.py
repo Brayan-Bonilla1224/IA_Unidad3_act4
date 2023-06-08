@@ -1,5 +1,7 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
 
 
 np.random.seed(42)  
@@ -10,11 +12,11 @@ Y = np.random.randint(10, 100, size=30)
 data = pd.DataFrame({'X': X, 'Y': Y})
 print(data)
 
-import matplotlib.pyplot as plt
+
 plt.scatter(data['X'], data['Y'])
 plt.show()
 
-from sklearn.cluster import KMeans
+
 kmeans = KMeans(n_clusters=5).fit(data)
 centroids = kmeans.cluster_centers_
 print(centroids)
